@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 require("dotenv/config");
 const client = new Discord.Client({
-  intents: ["GUILDS", "GUILD_MESSAGES"],
+  intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"],
   restTimeOffset: 0,
   allowedMentions: {
     parse: [],
