@@ -31,12 +31,12 @@ module.exports = {
     const subCommand = interaction.options.getSubcommand();
 
     if (subCommand === "bot") {
-      interaction.reply("I'm online and running!");
+      return interaction.reply("I'm online and running!");
     }
 
     if (subCommand === "join") {
       client.emit("guildMemberAdd", interaction.member);
-      interaction.reply({
+      return interaction.reply({
         content: `Check the <#${client.config.channels.frontdoor}> channel.`,
         ephemeral: true,
       });
@@ -44,7 +44,7 @@ module.exports = {
 
     if (subCommand === "leave") {
       client.emit("guildMemberRemove", interaction.member);
-      interaction.reply({
+      return interaction.reply({
         content: `Check the <#${client.config.channels.frontdoor}> channel.`,
         ephemeral: true,
       });
