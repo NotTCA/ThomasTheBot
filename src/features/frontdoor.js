@@ -55,7 +55,7 @@ module.exports = (client) => {
 
   client.on("guildMemberRemove", (member) => {
     const channel = member.guild.channels.cache.get(
-      client.config.channels.frontdoor
+      client.config.channels.leave
     );
 
     if (!channel) return;
